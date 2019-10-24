@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- basic meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <!-- apple-specific meta tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="white">
+    <meta name="format-detection" content="telephone=no">
+
+    <!-- SEO :) -->
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Fred Adams">
+    <meta name="description" content="Flowers make for beautiful UI.">
+    
+    <meta property="og:title" content="Flower Color Palette">
+    <meta property="og:site_name" content="Flower Color Palette">
+    <meta property="og:description" content="Flowers make for beautiful UI.">
+    <meta property="og:url" content="https://xtrp.github.io/flowerpalette/">
+
+    <script type="application/ld+json">
+    {
+        "@type": "WebSite",
+        "@context": "http://schema.org",
+        "url": "https://xtrp.github.io/flowerpalette/",
+        "name": "Flower Color Palette",
+        "author": {
+            "@type": "Person",
+            "name": "Fred Adams"
+        }
+        "description": "Flowers make for beautiful UI."
+    }
+    </script>
+
+    <title>Flower Color Palette</title>
+
+    <!-- add google analytics here -->
+
+    <!-- add favicon here -->
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <div class="container">
+        <nav class="topbar">
+            <div class="logo">
+                <h1 class="title">Flower Color Palette</h1>
+                <p class="description">Flowers make for beautiful UI.</p>
+            </div>
+            <div class="color_format">
+                <p class="label">Format: </p>
+                <select class="format_input">
+                    <option value="hex">Hex (#FFFFFF)</option>
+                    <option value="hex_no_has">Hex (FFFFFF)</option>
+                    <option value="rgb">RGB</option>
+                    <option value="rgba">RGBA</option>
+                </select>
+            </div>
+        </nav>
+        <div class="app">
+            <div class="palette">
+                
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
