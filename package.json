@@ -21,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/xtrp/flowerpalette/issues"
   },
-  "homepage": "https://github.com/xtrp/flowerpalette#readme"
+  "homepage": "https://github.com/xtrp/flowerpalette#readme",
+  "devDependencies": {
+    "node-sass": "^4.13.0"
+  }
 }
