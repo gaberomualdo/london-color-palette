@@ -1,0 +1,25 @@
+{
+  "name": "flowerpalette",
+  "version": "1.0.0",
+  "description": "A color palette handpicked from beautiful flowers.",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "node-sass sass/main.scss css/main.css -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xtrp/flowerpalette.git"
+  },
+  "keywords": [
+    "colors",
+    "colorpalette",
+    "flowers",
+    "uicolors"
+  ],
+  "author": "Fred Adams (@xtrp)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xtrp/flowerpalette/issues"
+  },
+  "homepage": "https://github.com/xtrp/flowerpalette#readme"
+}

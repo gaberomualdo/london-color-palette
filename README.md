@@ -1,2 +1,2 @@
 # flowerpalette
-A color palette made of different flowers!
+A color palette handpicked from beautiful flowers.
