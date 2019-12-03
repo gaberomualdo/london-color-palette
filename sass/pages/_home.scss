@@ -5,8 +5,32 @@
     box-sizing: border-box;
     padding: 1rem 2.5rem;
 
+    & > * {
+        display: block;
+    }
+
     .topbar__logo {
-        font-size: 1.35rem;
-        line-height: 3.5rem;
+        float: left;
+
+        .topbar__title, .topbar__description {
+            display: inline;
+            vertical-align: baseline;
+        }
+
+        .topbar__title {
+            font-size: 1.95rem;
+        }
+
+        .topbar__description {
+            font-size: 1.6rem;
+            vertical-align: baseline;
+            margin-left: 0.5rem;
+            color: lighten($color-grey-dark, 35%);
+        }
+    }
+
+    .topbar__color-format {
+        float: right;
+        height: 3.5rem;
     }
 }
