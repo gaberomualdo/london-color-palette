@@ -329,20 +329,61 @@ body {
 
 .app {
   width: 100%;
-  height: calc(100vh - 5rem);
+  height: calc(100vh - 5.5rem);
   padding: 2.5rem; }
   .app .app__palette {
     width: 100%;
     height: 100%; }
     .app .app__palette .app__palette-color {
-      width: calc((100% - 2.5rem) / 2);
-      height: calc(((100% - (2.5rem * 3)) / 4));
+      width: calc((100% - 2rem) / 2);
+      height: calc(((100% - (2rem * 2)) / 3));
       display: block;
       float: left;
       background-color: #ffffff;
       border-radius: 3px;
+      overflow: hidden;
       box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1); }
       .app .app__palette .app__palette-color:not(:last-child):not(:nth-last-child(2)) {
-        margin-bottom: 2.5rem; }
+        margin-bottom: 2rem; }
       .app .app__palette .app__palette-color:nth-child(odd) {
-        margin-right: 2.5rem; }
+        margin-right: 2rem; }
+      .app .app__palette .app__palette-color .app__color-content, .app .app__palette .app__palette-color .app__color-image-container {
+        height: 100%;
+        float: left; }
+      .app .app__palette .app__palette-color .app__color-image-container {
+        width: 30rem;
+        height: 100%; }
+        .app .app__palette .app__palette-color .app__color-image-container .app__color-image-container--color, .app .app__palette .app__palette-color .app__color-image-container .app__color-image-container--image {
+          float: left;
+          height: 100%; }
+        .app .app__palette .app__palette-color .app__color-image-container .app__color-image-container--color {
+          width: 1.25rem;
+          background-color: #2188ff; }
+        .app .app__palette .app__palette-color .app__color-image-container .app__color-image-container--image {
+          width: calc(100% - 1.25rem);
+          background-image: linear-gradient(rgba(33, 136, 255, 0.75), rgba(33, 136, 255, 0.75)), url(../img/test_img.jpg);
+          background-size: cover;
+          background-position: center;
+          background-blend-mode: screen;
+          clip-path: polygon(0 0, 100% 0, 85% 100%, 0 100%); }
+      .app .app__palette .app__palette-color .app__color-content {
+        width: calc(100% - 30rem);
+        padding: 1.75rem 2rem;
+        position: relative; }
+        .app .app__palette .app__palette-color .app__color-content .app__color-top-area {
+          position: absolute;
+          right: 1.75rem;
+          top: 1.5rem;
+          line-height: 1.25;
+          text-align: right; }
+          .app .app__palette .app__palette-color .app__color-content .app__color-top-area .app__color-description, .app .app__palette .app__palette-color .app__color-content .app__color-top-area .app__color-title {
+            display: inline;
+            vertical-align: baseline; }
+          .app .app__palette .app__palette-color .app__color-content .app__color-top-area .app__color-description {
+            font-size: 1.5rem;
+            color: #8ba2ae; }
+          .app .app__palette .app__palette-color .app__color-content .app__color-top-area .app__color-title {
+            font-size: 2rem;
+            text-transform: uppercase;
+            letter-spacing: .1rem;
+            margin-left: .75rem; }
