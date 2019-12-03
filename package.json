@@ -1,7 +1,7 @@
 {
-  "name": "flowerpalette",
+  "name": "londonpalette",
   "version": "1.0.0",
-  "description": "A color palette handpicked from beautiful flowers.",
+  "description": "A color palette built from famous London landmarks.",
   "main": "index.js",
   "scripts": {
     "compile:sass": "node-sass sass/main.scss css/main.css"
@@ -13,7 +13,8 @@
   "keywords": [
     "colors",
     "colorpalette",
-    "flowers",
+    "london",
+    "landmarks",
     "uicolors"
   ],
   "author": "Fred Adams (@xtrp)",

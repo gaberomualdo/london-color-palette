@@ -303,7 +303,7 @@ body {
 
 .topbar {
   background-color: #ffffff;
-  box-shadow: 0 0.75rem 2rem rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0.25rem 1.25rem rgba(0, 0, 0, 0.1);
   height: 5.5rem;
   box-sizing: border-box;
   padding: 1rem 2.5rem; }
