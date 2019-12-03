@@ -4,7 +4,7 @@
   "description": "A color palette handpicked from beautiful flowers.",
   "main": "index.js",
   "scripts": {
-    "compile:sass": "node-sass sass/main.scss css/main.css -w"
+    "compile:sass": "node-sass sass/main.scss css/main.css"
   },
   "repository": {
     "type": "git",

@@ -53,13 +53,12 @@
                 <h1 class="topbar__title">Flower Color Palette</h1>
                 <p class="topbar__description">flowers make for beautiful UI</p>
             </div>
-            <div class="topbar__color-format select-input-area">
-                <p class="select-input-area__input-label">Format: </p>
-                <select class="select-input-area__select-input">
-                    <option value="hex">Hex (#FFFFFF)</option>
-                    <option value="hex_no_has">Hex (FFFFFF)</option>
-                    <option value="rgb">RGB</option>
-                    <option value="rgba">RGBA</option>
+            <div class="topbar__color-format">
+                <select class="select-input" data-placeholder="Color Format:">
+                    <option value="hex" selected>Hex (#FFFFFF)</option>
+                    <option value="hex_no_hash">Hex (FFFFFF)</option>
+                    <option value="rgb">RGB (r, g, b)</option>
+                    <option value="rgba">RGBA (r, g, b, a)</option>
                 </select>
             </div>
         </nav>
@@ -70,6 +69,10 @@
         </div>
     </div>
 
+    <!-- AW Select -->
+    <script src="js/vendors/jquery.js"></script>
+    <script src="js/vendors/awselect.min.js"></script>
+    
     <script src="js/script.js"></script>
 </body>
 
