@@ -358,10 +358,10 @@ body {
           height: 100%; }
         .app .app__palette .app__palette-color .app__color-image-container .app__color-image-container--color {
           width: 1.25rem;
-          background-color: #0f0; }
+          background-color: var(--main-color); }
         .app .app__palette .app__palette-color .app__color-image-container .app__color-image-container--image {
           width: calc(100% - 1.25rem);
-          background-image: linear-gradient(rgba(0, 255, 0, 0.75), rgba(0, 255, 0, 0.75)), url(../img/test_img.jpg);
+          background-image: var(--color-gradient), var(--image-path);
           background-size: cover;
           background-position: center, calc(50% - 1rem) center;
           background-blend-mode: screen;

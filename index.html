@@ -54,8 +54,8 @@
                 <p class="topbar__description">colors from famous London landmarks</p>
             </div>
             <div class="topbar__color-format">
-                <select class="select-input" data-placeholder="Color Format:">
-                    <option value="hex" selected>Hex (#FFFFFF)</option>
+                <select class="select-input" data-placeholder="Color Format:" data-callback="changeColorFormat">
+                    <option value="hex">Hex (#FFFFFF)</option>
                     <option value="hex_no_hash">Hex (FFFFFF)</option>
                     <option value="rgb">RGB (R, G, B)</option>
                     <option value="rgba">RGBA (R, G, B, A)</option>
@@ -64,69 +64,7 @@
         </nav>
         <div class="app">
             <div class="app__palette">
-                <div class="app__palette-color">
-                    <div class="app__color-image-container">
-                        <div class="app__color-image-container--color"></div>
-                        <div class="app__color-image-container--image"></div>
-                    </div>
-                    <div class="app__color-content">
-                        <div class="app__color-top-area">
-                            <p class="app__color-description">The Shard, Central London</p>
-                            <h1 class="app__color-title">Shard Blue</h1>
-                        </div>
-                        <div class="app__color-main-palette">
-                            <div class="app__color-colors-list">
-                                <div class="app__color-colors-list-color">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M22 6v16h-16v-16h16zm2-2h-20v20h20v-20zm-24 17v-21h21v2h-19v19h-2z"/></svg>
-                                </div>
-                                <div class="app__color-colors-list-color">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M22 6v16h-16v-16h16zm2-2h-20v20h20v-20zm-24 17v-21h21v2h-19v19h-2z"/></svg>
-                                </div>
-                                <div class="app__color-colors-list-color">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M22 6v16h-16v-16h16zm2-2h-20v20h20v-20zm-24 17v-21h21v2h-19v19h-2z"/></svg>
-                                </div>
-                                <div class="app__color-colors-list-color">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M22 6v16h-16v-16h16zm2-2h-20v20h20v-20zm-24 17v-21h21v2h-19v19h-2z"/></svg>
-                                </div>
-                                <div class="app__color-colors-list-color">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M22 6v16h-16v-16h16zm2-2h-20v20h20v-20zm-24 17v-21h21v2h-19v19h-2z"/></svg>
-                                </div>
-                            </div>
-                            <div class="app__color-colors-list">
-                                <div class="app__color-colors-list-color">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M22 6v16h-16v-16h16zm2-2h-20v20h20v-20zm-24 17v-21h21v2h-19v19h-2z"/></svg>
-                                </div>
-                                <div class="app__color-colors-list-color">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M22 6v16h-16v-16h16zm2-2h-20v20h20v-20zm-24 17v-21h21v2h-19v19h-2z"/></svg>
-                                </div>
-                                <div class="app__color-colors-list-color">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M22 6v16h-16v-16h16zm2-2h-20v20h20v-20zm-24 17v-21h21v2h-19v19h-2z"/></svg>
-                                </div>
-                                <div class="app__color-colors-list-color">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M22 6v16h-16v-16h16zm2-2h-20v20h20v-20zm-24 17v-21h21v2h-19v19h-2z"/></svg>
-                                </div>
-                                <div class="app__color-colors-list-color">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M22 6v16h-16v-16h16zm2-2h-20v20h20v-20zm-24 17v-21h21v2h-19v19h-2z"/></svg>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="app__palette-color">
-                    
-                </div>
-                <div class="app__palette-color">
-                    
-                </div>
-                <div class="app__palette-color">
-                    
-                </div>
-                <div class="app__palette-color">
-                    
-                </div>
-                <div class="app__palette-color">
-                    
-                </div>
+                
             </div>
         </div>
     </div>
@@ -135,6 +73,14 @@
     <script src="js/vendors/jquery.js"></script>
     <script src="js/vendors/awselect.min.js"></script>
     
+    <!-- psbc.js (for color manipulation w/js) -->
+    <script src="js/vendors/psbc.js"></script>
+    
+    <!-- copy to clipboard function -->
+    <script src="js/vendors/copytoclipboard.js"></script>
+
+    <!-- Scripts -->
+    <script src="js/colors.js"></script>
     <script src="js/script.js"></script>
 </body>
 
