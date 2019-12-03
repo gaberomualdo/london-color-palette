@@ -83,10 +83,10 @@ $(document).ready(() => {
 const copyColorFromBtn = (colorHex, button) => {
     // remove any existing clicking attributes
     button.removeAttribute("click-id");
-    button.classList.remove("clicking");
+    button.classList.remove("app__color-colors-list-color--clicking");
 
     // add clicking attribute
-    button.classList.add("clicking");
+    button.classList.add("app__color-colors-list-color--clicking");
     
     // clickID is used to verify that no other click has occurred when removing class "clicking" in 500ms
     const clickID = Math.floor(Math.random() * 1000000000);
@@ -95,7 +95,9 @@ const copyColorFromBtn = (colorHex, button) => {
     // remove "clicking" class and clickID after 500ms
     setTimeout(() => {
         if(button.getAttribute("click-id") == clickID) {
-            button.classList.remove("clicking");
+            button.classList.add("app__color-colors-list-color--clicked");
+            button.classList.remove("app__color-colors-list-color--clicking");
+            setTimeout(() => { button.classList.remove("app__color-colors-list-color--clicked"); }, 50);
             button.removeAttribute("click-id");
         }
     }, 1000);

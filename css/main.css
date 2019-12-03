@@ -399,7 +399,7 @@ body {
             .app .app__palette .app__palette-color .app__color-content .app__color-main-palette .app__color-colors-list:not(:last-child) {
               margin-bottom: 2rem; }
             .app .app__palette .app__palette-color .app__color-content .app__color-main-palette .app__color-colors-list .app__color-colors-list-color {
-              --current-color: #0f0;
+              --current-color: transparent;
               width: 4.5rem;
               height: 4.5rem;
               float: left;
@@ -429,9 +429,11 @@ body {
               .app .app__palette .app__palette-color .app__color-content .app__color-main-palette .app__color-colors-list .app__color-colors-list-color:active {
                 box-shadow: 0 0.1rem 0.65rem rgba(0, 0, 0, 0.15);
                 transform: translateY(-0.1rem); }
-              .app .app__palette .app__palette-color .app__color-content .app__color-main-palette .app__color-colors-list .app__color-colors-list-color.clicking::after {
+              .app .app__palette .app__palette-color .app__color-content .app__color-main-palette .app__color-colors-list .app__color-colors-list-color--clicking::after {
                 transform: scale(1.5);
                 opacity: 0; }
+              .app .app__palette .app__palette-color .app__color-content .app__color-main-palette .app__color-colors-list .app__color-colors-list-color--clicked::after {
+                transition: all 0s; }
               .app .app__palette .app__palette-color .app__color-content .app__color-main-palette .app__color-colors-list .app__color-colors-list-color:not(:last-child) {
                 margin-right: calc((100% - (4.5rem * 5)) / 4); }
               .app .app__palette .app__palette-color .app__color-content .app__color-main-palette .app__color-colors-list .app__color-colors-list-color svg {

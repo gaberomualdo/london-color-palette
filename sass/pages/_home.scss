@@ -143,7 +143,7 @@
                         }
 
                         .app__color-colors-list-color {
-                            --current-color: #0f0;
+                            --current-color: transparent;
                             width: 4.5rem;
                             height: 4.5rem;
                             float: left;
@@ -182,9 +182,12 @@
                                 transform: translateY(-.1rem);
                             }
                             
-                            &.clicking::after {
+                            &--clicking::after {
                                 transform: scale(1.5);
                                 opacity: 0;
+                            }
+                            &--clicked::after {
+                                transition: all 0s;
                             }
                             
                             &:not(:last-child) {
