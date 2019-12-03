@@ -29,30 +29,47 @@ $(document).ready(() => {
 // add colors
 (() => {
     colors.forEach((color) => {
-        console.log(color);
         // create 5 light colors and 5 dark colors using the pSBC function and store in arrays
         let colorLightList = [];
         for(let i = 0; i < 5; i++) {
-            colorLightList.push(pSBC(.175 * (i + 1), color.hex));
+            colorLightList.push({hex: pSBC(.175 * (i + 1), color.hex), opacityNumber: 5 - (1 * i)});
         }
         
         let colorDarkList = [];
         for(let i = 0; i < 5; i++) {
-            colorDarkList.push(pSBC(-.2 * i, color.hex));
+            colorDarkList.push({hex: pSBC(-.2 * i, color.hex), opacityNumber: 6 + (1 * i)});
         }
         colorDarkList.reverse();
         
         // convert list of dark and light colors into markup of color lists
-        const getColorListColorHTML = (colorHex) => {
+        const getColorListColorHTML = (colorHex, opacityNumber) => {
             return `<div class="app__color-colors-list-color" onclick="copyColorFromBtn('${colorHex}', this);" style="--current-color: ${colorHex}">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M22 6v16h-16v-16h16zm2-2h-20v20h20v-20zm-24 17v-21h21v2h-19v19h-2z"/></svg>
+                <p class="app__color-colors-list-color--opacity">${opacityNumber}</p>
             </div>`;
         }
 
-        const colorLightListHTML = colorLightList.map(e => getColorListColorHTML(e)).join("\n");
-        const colorDarkListHTML = colorDarkList.map(e => getColorListColorHTML(e)).join("\n");
+        // both lists combined
+        let colorCombinedList = colorDarkList.concat(colorLightList);
 
-        console.log(colorLightListHTML);
+        // split into two rows
+        let row1 = [];
+        let row2 = [];
+
+        for (let i = 0; i < colorCombinedList.length; i++){
+            if ((i + 2) % 2 == 0) {
+                row1.push(colorCombinedList[i]);
+            }
+            else {
+                row2.push(colorCombinedList[i]);
+            }
+        }
+
+        console.log(row1);
+        console.log(row2);
+
+        const colorRow1HTML = row1.map(e => getColorListColorHTML(e.hex, e.opacityNumber)).join("\n");
+        const colorRow2HTML = row2.map(e => getColorListColorHTML(e.hex, e.opacityNumber)).join("\n");
         
         // add complete markup with generated dark and light markup to parent element
         document.querySelector(".app__palette").innerHTML += `
@@ -68,10 +85,10 @@ $(document).ready(() => {
                 </div>
                 <div class="app__color-main-palette">
                     <div class="app__color-colors-list">
-                        ${colorDarkListHTML}
+                        ${colorRow1HTML}
                     </div>
                     <div class="app__color-colors-list">
-                        ${colorLightListHTML}
+                        ${colorRow2HTML}
                     </div>
                 </div>
             </div>

@@ -1,0 +1,22 @@
+.footer {
+    padding: 0 2.5rem;
+    height: 5rem;
+    padding-top: .5rem;
+    
+    &__credits {
+        display: block;
+        font-size: 1.6rem;
+        text-align: right;
+        line-height: 4.5rem;
+    }
+
+    a {
+        color: #2188ff;
+        text-decoration: none;
+
+        &:hover {
+            color: #2155ff;
+            text-decoration: underline;
+        }
+    }
+}

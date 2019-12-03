@@ -296,11 +296,6 @@ body {
         transform: translateY(0);
     }
 }*/
-.container {
-  width: 100%;
-  height: 100vh;
-  background-color: #eceff1; }
-
 .topbar {
   background-color: #ffffff;
   box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.1);
@@ -327,10 +322,31 @@ body {
     .topbar .topbar__color-format .awselect .front_face {
       height: 3.5rem; }
 
+.container {
+  width: 100%;
+  height: 100vh;
+  background-color: #eceff1; }
+
+.footer {
+  padding: 0 2.5rem;
+  height: 5rem;
+  padding-top: .5rem; }
+  .footer__credits {
+    display: block;
+    font-size: 1.6rem;
+    text-align: right;
+    line-height: 4.5rem; }
+  .footer a {
+    color: #2188ff;
+    text-decoration: none; }
+    .footer a:hover {
+      color: #2155ff;
+      text-decoration: underline; }
+
 .app {
   width: 100%;
-  height: calc(100vh - 5.5rem);
-  padding: 2.5rem; }
+  height: calc(100vh - 10.5rem);
+  padding: 2.5rem 2.5rem 0 2.5rem; }
   .app .app__palette {
     width: 100%;
     height: 100%; }
@@ -343,10 +359,19 @@ body {
       border-radius: 3px;
       overflow: hidden;
       box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1); }
-      .app .app__palette .app__palette-color:not(:last-child):not(:nth-last-child(2)) {
-        margin-bottom: 2rem; }
+      @media only screen and (min-width: 1150px) {
+        .app .app__palette .app__palette-color:not(:last-child):not(:nth-last-child(2)) {
+          margin-bottom: 2rem; } }
+      @media only screen and (max-width: 1150px) {
+        .app .app__palette .app__palette-color {
+          width: 100%;
+          margin-bottom: 2rem;
+          height: 20rem; } }
       .app .app__palette .app__palette-color:nth-child(odd) {
         margin-right: 2rem; }
+        @media only screen and (max-width: 1150px) {
+          .app .app__palette .app__palette-color:nth-child(odd) {
+            margin-right: 0; } }
       .app .app__palette .app__palette-color .app__color-content, .app .app__palette .app__palette-color .app__color-image-container {
         height: 100%;
         float: left; }
@@ -371,11 +396,20 @@ body {
         margin-left: 2.5rem;
         padding: 1.5rem 2rem;
         position: relative; }
+        @media only screen and (max-width: 1350px) {
+          .app .app__palette .app__palette-color .app__color-content {
+            margin-left: 0;
+            width: calc(100% - 30rem);
+            padding-left: .5rem; } }
+        @media only screen and (max-width: 1150px) {
+          .app .app__palette .app__palette-color .app__color-content {
+            width: 40rem;
+            float: right; } }
         .app .app__palette .app__palette-color .app__color-content .app__color-top-area {
           float: right;
           line-height: 1.25;
           text-align: right;
-          margin-bottom: 3.5rem; }
+          margin-bottom: 2.5rem; }
           .app .app__palette .app__palette-color .app__color-content .app__color-top-area .app__color-description, .app .app__palette .app__palette-color .app__color-content .app__color-top-area .app__color-title {
             display: inline;
             vertical-align: baseline; }
@@ -409,6 +443,14 @@ body {
               cursor: pointer;
               transition: box-shadow .2s, transform .2s;
               background-color: var(--current-color); }
+              @media only screen and (max-width: 1350px) and (min-width: 1150px) {
+                .app .app__palette .app__palette-color .app__color-content .app__color-main-palette .app__color-colors-list .app__color-colors-list-color {
+                  width: 4.25rem;
+                  height: 4.25rem; } }
+              @media only screen and (max-width: 1250px) and (min-width: 1150px) {
+                .app .app__palette .app__palette-color .app__color-content .app__color-main-palette .app__color-colors-list .app__color-colors-list-color {
+                  width: 3.75rem;
+                  height: 3.75rem; } }
               .app .app__palette .app__palette-color .app__color-content .app__color-main-palette .app__color-colors-list .app__color-colors-list-color::after {
                 content: "";
                 display: inline-block;
@@ -426,6 +468,8 @@ body {
                 transform: translateY(-0.25rem); }
                 .app .app__palette .app__palette-color .app__color-content .app__color-main-palette .app__color-colors-list .app__color-colors-list-color:hover svg {
                   opacity: 1; }
+                .app .app__palette .app__palette-color .app__color-content .app__color-main-palette .app__color-colors-list .app__color-colors-list-color:hover .app__color-colors-list-color--opacity {
+                  opacity: 0; }
               .app .app__palette .app__palette-color .app__color-content .app__color-main-palette .app__color-colors-list .app__color-colors-list-color:active {
                 box-shadow: 0 0.1rem 0.65rem rgba(0, 0, 0, 0.15);
                 transform: translateY(-0.1rem); }
@@ -436,6 +480,12 @@ body {
                 transition: all 0s; }
               .app .app__palette .app__palette-color .app__color-content .app__color-main-palette .app__color-colors-list .app__color-colors-list-color:not(:last-child) {
                 margin-right: calc((100% - (4.5rem * 5)) / 4); }
+                @media only screen and (max-width: 1350px) and (min-width: 1150px) {
+                  .app .app__palette .app__palette-color .app__color-content .app__color-main-palette .app__color-colors-list .app__color-colors-list-color:not(:last-child) {
+                    margin-right: calc((100% - (4.25rem * 5)) / 4); } }
+                @media only screen and (max-width: 1250px) and (min-width: 1150px) {
+                  .app .app__palette .app__palette-color .app__color-content .app__color-main-palette .app__color-colors-list .app__color-colors-list-color:not(:last-child) {
+                    margin-right: calc((100% - (3.75rem * 5)) / 4); } }
               .app .app__palette .app__palette-color .app__color-content .app__color-main-palette .app__color-colors-list .app__color-colors-list-color svg {
                 width: 1.75rem;
                 height: 1.75rem;
@@ -445,3 +495,21 @@ body {
                 fill: #ffffff;
                 opacity: 0;
                 transition: opacity .2s; }
+                @media only screen and (max-width: 1350px) and (min-width: 1150px) {
+                  .app .app__palette .app__palette-color .app__color-content .app__color-main-palette .app__color-colors-list .app__color-colors-list-color svg {
+                    left: calc((4.25rem - 1.75rem) / 2);
+                    top: calc((4.25rem - 1.75rem) / 2); } }
+                @media only screen and (max-width: 1250px) and (min-width: 1150px) {
+                  .app .app__palette .app__palette-color .app__color-content .app__color-main-palette .app__color-colors-list .app__color-colors-list-color svg {
+                    left: calc((3.75rem - 1.75rem) / 2);
+                    top: calc((3.75rem - 1.75rem) / 2); } }
+              .app .app__palette .app__palette-color .app__color-content .app__color-main-palette .app__color-colors-list .app__color-colors-list-color--opacity {
+                position: absolute;
+                bottom: 0.35rem;
+                right: 0.35rem;
+                color: #fff;
+                line-height: 1;
+                /*opacity: .65;*/
+                transition: opacity .2s;
+                font-size: .85rem;
+                display: none; }
