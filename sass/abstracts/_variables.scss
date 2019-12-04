@@ -19,6 +19,14 @@ $color-grey-light-2: #eceff1;
 $default-font-size: 1.6rem;
 
 // for media queries
-$break-large: 1350px;
-$break-medium: 1250px;
+$break-desktop: 1430px;
+$break-large: 1400px;
+$break-medium: 1350px;
+
 $break-tablet: 1150px;
+$break-tablet-small: 800px;
+$break-mobile: 750px;
+$break-phone: 500px;
+
+$break-small-height: 750px;
+$break-smaller-height: 700px;

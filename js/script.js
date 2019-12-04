@@ -4,12 +4,39 @@ if(!colorFormat || (colorFormat != "hex" && colorFormat != "hex_no_hash" && colo
     colorFormat = "hex";
 }
 
-// set selected
+// set selected color format
 document.querySelector(".topbar__color-format .select-input option[value=" + colorFormat + "]").setAttribute("selected", "true");
 
 function changeColorFormat(newValue) {
     colorFormat = newValue;
     localStorage.setItem("london-color-palette-color-format", colorFormat);
+}
+
+// convert from hex to various formats
+// some code taken from user Tim Down on https://stackoverflow.com/questions/5623838/rgb-to-hex-and-hex-to-rgb
+function convertHexToFormat(hexValue, format) {
+    switch(format) {
+        case "hex":
+            return hexValue;
+            break;
+        case "hex_no_hash":
+            return hexValue.split("").slice(1).join("");
+            break;
+        case "rgb":
+            const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hexValue);
+            return result ? 
+                "rgb(" + parseInt(result[1], 16) + ", " + 
+                parseInt(result[2], 16) + ", " +
+                parseInt(result[3], 16) + ")"
+             : null;
+            break;
+        case "rgba":
+            const rgb = convertHexToFormat(hexValue, "rgb");
+            return rgb.split("").slice(0, rgb.length - 1).join("") + ", 255)";
+            break;
+        default:
+            return null;
+    }
 }
 
 // initialize awselect on all default select elements
@@ -120,5 +147,6 @@ const copyColorFromBtn = (colorHex, button) => {
     }, 1000);
 
     // copy color to clipboard
-    copyTextToClipboard(colorHex);
+    const valueToCopy = convertHexToFormat(colorHex, colorFormat);
+    copyTextToClipboard(valueToCopy);
 }

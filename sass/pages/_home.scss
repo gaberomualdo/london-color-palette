@@ -3,6 +3,10 @@
     height: calc(100vh - 10.5rem);
     padding: 2.5rem 2.5rem 0 2.5rem;
 
+    @media only screen and (max-width: $break-phone) {
+        padding: 1.5rem 1.5rem 0 1.5rem;
+    }
+
     .app__palette {
         width: 100%;
         height: 100%;
@@ -28,7 +32,12 @@
             @media only screen and (max-width: $break-tablet) {
                 width: 100%;
                 margin-bottom: 2rem;
-                height: 20rem;
+                height: 22.5rem;
+            }
+
+            @media only screen and (max-width: $break-mobile) {
+                height: auto;
+                overflow: hidden;
             }
 
             &:nth-child(odd) {
@@ -42,11 +51,18 @@
             .app__color-content, .app__color-image-container {
                 height: 100%;
                 float: left;
+                @media only screen and (max-width: $break-mobile) {
+                    width: 100% !important;
+                }
             }
             
             .app__color-image-container {
                 width: 30rem;
                 height: 100%;
+
+                @media only screen and (max-width: $break-mobile) {
+                    height: 30rem;
+                }
 
                 .app__color-image-container--color, .app__color-image-container--image {
                     float: left;
@@ -64,6 +80,11 @@
                     background-position: center, calc(50% - 1rem) center;
                     background-blend-mode: screen;
                     clip-path: polygon(0 0, 100% 0, calc(100% - 5rem) 100%, 0 100%);
+
+                    @media only screen and (max-width: $break-mobile) {
+                        background-position: center;
+                        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+                    }
                 }
             }
             
@@ -73,7 +94,7 @@
                 padding: 1.5rem 2rem;
                 position: relative;
 
-                @media only screen and (max-width: $break-large) {
+                @media only screen and (max-width: $break-desktop) {
                     margin-left: 0;
                     width: calc(100% - 30rem);
                     padding-left: .5rem;
@@ -82,6 +103,15 @@
                 @media only screen and (max-width: $break-tablet) {
                     width: 40rem;
                     float: right;
+                }
+
+                @media only screen and (max-width: $break-tablet-small) {
+                    width: calc(100% - 32.5rem);
+                }
+
+                @media only screen and (max-width: $break-mobile) {
+                    height: 22.5rem;
+                    padding: 2.5rem;
                 }
 
                 .app__color-top-area {
@@ -93,6 +123,10 @@
                     .app__color-description, .app__color-title {
                         display: inline;
                         vertical-align: baseline;
+
+                        @media only screen and (max-width: $break-desktop) {
+                            display: block;
+                        }
                     }
 
                     .app__color-description {
@@ -122,6 +156,20 @@
 
                         &:not(:last-child) {
                             margin-bottom: 2rem;
+                        }
+
+                        // descrease vertical margin on small heights
+                        @media only screen and (min-width: $break-tablet) and (max-height: $break-small-height) {
+                            &:not(:last-child) {
+                                margin-bottom: 1rem;
+                            }
+                        }
+
+                        // only show half the colors on smaller heights
+                        @media only screen and (min-width: $break-tablet) and (max-height: $break-smaller-height) {
+                            &:nth-child(2) {
+                                display: none;
+                            }
                         }
 
                         .app__color-colors-list-color {
