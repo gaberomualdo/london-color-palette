@@ -296,6 +296,73 @@ body {
         transform: translateY(0);
     }
 }*/
+.fullscreen-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99999;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  transition: opacity .4s; }
+  .fullscreen-modal--opening, .fullscreen-modal--opened {
+    display: block; }
+  .fullscreen-modal--opening {
+    opacity: 0; }
+  .fullscreen-modal--opened {
+    opacity: 1; }
+  .fullscreen-modal__inner {
+    display: block;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.15);
+    border-radius: 3px;
+    width: 65rem;
+    padding: 3rem 4rem;
+    font-size: 1.6rem; }
+    .fullscreen-modal__inner-close-btn {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      width: 2rem;
+      height: 2rem;
+      cursor: pointer; }
+      .fullscreen-modal__inner-close-btn svg {
+        width: 100%;
+        height: auto;
+        fill: #455A64;
+        opacity: .5;
+        transition: opacity .2s, transform .2s; }
+      .fullscreen-modal__inner-close-btn:hover svg {
+        opacity: 1;
+        transform: scale(1.05); }
+      .fullscreen-modal__inner-close-btn:active svg {
+        transform: scale(1); }
+    .fullscreen-modal__inner-title {
+      font-size: 3.75rem;
+      text-transform: uppercase;
+      letter-spacing: .1rem;
+      text-align: center;
+      line-height: 1.35;
+      margin-bottom: 3.5rem;
+      color: var(--main-color); }
+    .fullscreen-modal__inner p {
+      margin-bottom: 1.25rem;
+      overflow: hidden; }
+      .fullscreen-modal__inner p strong, .fullscreen-modal__inner p span {
+        display: block;
+        float: left; }
+      .fullscreen-modal__inner p strong {
+        width: 10rem; }
+      .fullscreen-modal__inner p span {
+        width: calc(100% - 10.75rem);
+        margin-left: .75rem;
+        color: #56707c; }
+
 .topbar {
   background-color: #ffffff;
   box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.1);

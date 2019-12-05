@@ -1,0 +1,98 @@
+.fullscreen-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99999;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+
+    transition: opacity .4s;
+
+    &--opening, &--opened {
+        display: block;
+    }
+
+    &--opening {
+        opacity: 0;
+    }
+    
+    &--opened {
+        opacity: 1;
+    }
+
+    &__inner {
+        display: block;
+        position: absolute;
+        top: 47%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: $color-white;
+        box-shadow: 0 .25rem 1rem rgba($color-black, .15);
+        border-radius: 3px;
+        width: 65rem;
+        padding: 3rem 4rem;
+        font-size: 1.6rem;
+
+        &-close-btn {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            width: 2rem;
+            height: 2rem;
+            cursor: pointer;
+
+            svg {
+                width: 100%;
+                height: auto;
+                fill: $color-grey-default;
+                opacity: .5;
+                transition: opacity .2s, transform .2s;
+            }
+
+            &:hover {
+                svg {
+                    opacity: 1;
+                    transform: scale(1.05);
+                }
+            }
+
+            &:active {
+                svg {
+                    transform: scale(1);
+                }
+            }
+        }
+
+        &-title {
+            font-size: 3.75rem;
+            text-transform: uppercase;
+            letter-spacing: .1rem;
+            text-align: center;
+            line-height: 1.35;
+            margin-bottom: 3.5rem;
+            color: var(--main-color);
+        }
+
+        p {
+            margin-bottom: 1.25rem;
+            overflow: hidden;
+
+            strong, span {
+                display: block;
+                float: left;
+            }
+
+            strong {
+                width: 10rem;
+            }
+
+            span {
+                width: calc(100% - 10.75rem);
+                margin-left: .75rem;
+                color: lighten($color-grey-dark, 15%);
+            }
+        }
+    }
+}
