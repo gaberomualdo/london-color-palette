@@ -32,7 +32,7 @@ function convertHexToFormat(hexValue, format) {
             break;
         case "rgba":
             const rgb = convertHexToFormat(hexValue, "rgb");
-            return rgb.split("").slice(0, rgb.length - 1).join("") + ", 255)";
+            return "rgba" + rgb.split("").slice(3, rgb.length - 1).join("") + ", 255)";
             break;
         default:
             return null;
@@ -92,9 +92,6 @@ $(document).ready(() => {
             }
         }
 
-        console.log(row1);
-        console.log(row2);
-
         const colorRow1HTML = row1.map(e => getColorListColorHTML(e.hex, e.opacityNumber)).join("\n");
         const colorRow2HTML = row2.map(e => getColorListColorHTML(e.hex, e.opacityNumber)).join("\n");
         
@@ -102,6 +99,9 @@ $(document).ready(() => {
         document.querySelector(".app__palette").innerHTML += `
         <div class="app__palette-color">
             <div class="app__color-image-container">
+                <button class="app__color-image-container--modal-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-.001 5.75c.69 0 1.251.56 1.251 1.25s-.561 1.25-1.251 1.25-1.249-.56-1.249-1.25.559-1.25 1.249-1.25zm2.001 12.25h-4v-1c.484-.179 1-.201 1-.735v-4.467c0-.534-.516-.618-1-.797v-1h3v6.265c0 .535.517.558 1 .735v.999z"/></svg>
+                </button>
                 <div class="app__color-image-container--color" style="--main-color: ${color.hex};"></div>
                 <div class="app__color-image-container--image" style="--color-gradient: linear-gradient(to bottom right, ${pSBC ( 0, color.hex + "aa", "c" )}, ${pSBC ( 0, color.hex + "aa", "c" )}); --image-path: url('${color.imagePath}');"></div>
             </div>
@@ -119,7 +119,14 @@ $(document).ready(() => {
                     </div>
                 </div>
             </div>
-        </div>`;
+        </div>
+        <div class="app__palette-color-modal fullscreen-modal>
+            <div class="fullscreen-modal__inner">
+                <div class="fullscreen-modal__inner-close-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z"/></svg>
+                </div>
+            </div>
+        </div>"`;
     });
 })();
 
@@ -144,9 +151,52 @@ const copyColorFromBtn = (colorHex, button) => {
             setTimeout(() => { button.classList.remove("app__color-colors-list-color--clicked"); }, 50);
             button.removeAttribute("click-id");
         }
-    }, 1000);
+    }, 450);
 
     // copy color to clipboard
     const valueToCopy = convertHexToFormat(colorHex, colorFormat);
     copyTextToClipboard(valueToCopy);
+
+    // show copied alert
+
+    // if mobile, use regular alert, if not, use in-page alert
+    const isMobile = window.innerWidth <= 650;
+    if(isMobile) {
+        setTimeout(() => {
+            alert("Color Copied! — " + valueToCopy);
+        }, 450);
+    }else {
+        // set content of alert box to color that was copied
+        document.querySelector(".topbar__color-copied-alert--alert-content").innerHTML = "&mdash; " + valueToCopy;
+       
+        // decide on the color and background-color of the alert box
+        // bg will be the copied color
+        // color will be white or darkened version of copied color, using a formula taken from user Mark Ransom on https://stackoverflow.com/questions/3942878/how-to-decide-font-color-in-white-or-black-depending-on-background-color
+
+        let rgbValue = convertHexToFormat(colorHex, "rgb");
+        rgbValue = rgbValue.split("").slice(4, rgbValue.length - 1).join("").split(", ");
+        
+        if(rgbValue[0]*0.299 + rgbValue[1]*0.587 + rgbValue[2]*0.114 > 186) {
+            document.querySelector(".topbar__color-copied-alert").style.color = pSBC(-.87, colorHex);
+        }else {
+            document.querySelector(".topbar__color-copied-alert").style.color = "#ffffff";
+        }
+
+        document.querySelector(".topbar__color-copied-alert").style.backgroundColor = colorHex;
+
+        // add displayed class to alert box
+        document.querySelector(".topbar__color-copied-alert").classList.add("topbar__color-copied-alert--displayed");
+
+        // alertID is used to verify that no other alert has been fired when removing class "displayed" in 500ms
+        const alertID = Math.floor(Math.random() * 1000000000);
+        document.querySelector(".topbar__color-copied-alert").setAttribute("alert-id", alertID);
+
+        // remove "displayed" class and alertID after 1000ms
+        setTimeout(() => {
+            if(document.querySelector(".topbar__color-copied-alert").getAttribute("alert-id") == alertID) {
+                document.querySelector(".topbar__color-copied-alert").classList.remove("topbar__color-copied-alert--displayed");
+                document.querySelector(".topbar__color-copied-alert").removeAttribute("alert-id");
+            }
+        }, 1500);
+    }
 }

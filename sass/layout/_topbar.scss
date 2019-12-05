@@ -13,31 +13,47 @@
         display: block;
     }
 
-    .topbar__logo {
+    &__logo {
         float: left;
+    }
 
-        .topbar__title, .topbar__description {
+        &__title, &__description {
             display: inline;
             vertical-align: baseline;
         }
 
-        .topbar__title {
+        &__title {
             font-size: 1.95rem;
         }
 
-        .topbar__description {
+        &__description {
             font-size: 1.6rem;
             vertical-align: baseline;
             margin-left: 0.5rem;
             color: lighten($color-grey-dark, 35%);
 
-            @media only screen and (max-width: $break-mobile) {
+            @media only screen and (max-width: $break-tablet) {
                 display: none;
             }
         }
-    }
 
-    .topbar__color-format {
+    &__color-copied-alert {
+        float: right;
+        height: 3.5rem;
+        padding: 0 1.5rem;
+        line-height: 3.5rem;
+        border-radius: 3px;
+        font-size: 1.4rem;
+        margin-right: 1rem;
+
+        transition: opacity .2s;
+
+        &:not(&--displayed) {
+            opacity: 0;
+        }
+    }
+        
+    &__color-format {
         float: right;
         height: 3.5rem;
 

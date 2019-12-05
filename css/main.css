@@ -307,25 +307,36 @@ body {
       padding: 1rem 1.5rem; } }
   .topbar > * {
     display: block; }
-  .topbar .topbar__logo {
+  .topbar__logo {
     float: left; }
-    .topbar .topbar__logo .topbar__title, .topbar .topbar__logo .topbar__description {
-      display: inline;
-      vertical-align: baseline; }
-    .topbar .topbar__logo .topbar__title {
-      font-size: 1.95rem; }
-    .topbar .topbar__logo .topbar__description {
-      font-size: 1.6rem;
-      vertical-align: baseline;
-      margin-left: 0.5rem;
-      color: #8ba2ae; }
-      @media only screen and (max-width: 750px) {
-        .topbar .topbar__logo .topbar__description {
-          display: none; } }
-  .topbar .topbar__color-format {
+  .topbar__title, .topbar__description {
+    display: inline;
+    vertical-align: baseline; }
+  .topbar__title {
+    font-size: 1.95rem; }
+  .topbar__description {
+    font-size: 1.6rem;
+    vertical-align: baseline;
+    margin-left: 0.5rem;
+    color: #8ba2ae; }
+    @media only screen and (max-width: 1150px) {
+      .topbar__description {
+        display: none; } }
+  .topbar__color-copied-alert {
+    float: right;
+    height: 3.5rem;
+    padding: 0 1.5rem;
+    line-height: 3.5rem;
+    border-radius: 3px;
+    font-size: 1.4rem;
+    margin-right: 1rem;
+    transition: opacity .2s; }
+    .topbar__color-copied-alert:not(.topbar__color-copied-alert--displayed) {
+      opacity: 0; }
+  .topbar__color-format {
     float: right;
     height: 3.5rem; }
-    .topbar .topbar__color-format .awselect .front_face {
+    .topbar__color-format .awselect .front_face {
       height: 3.5rem; }
 
 .container {
