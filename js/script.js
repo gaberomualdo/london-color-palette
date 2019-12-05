@@ -99,11 +99,11 @@ $(document).ready(() => {
         document.querySelector(".app__palette").innerHTML += `
         <div class="app__palette-color">
             <div class="app__color-image-container">
-                <button class="app__color-image-container--modal-btn">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-.001 5.75c.69 0 1.251.56 1.251 1.25s-.561 1.25-1.251 1.25-1.249-.56-1.249-1.25.559-1.25 1.249-1.25zm2.001 12.25h-4v-1c.484-.179 1-.201 1-.735v-4.467c0-.534-.516-.618-1-.797v-1h3v6.265c0 .535.517.558 1 .735v.999z"/></svg>
-                </button>
                 <div class="app__color-image-container--color" style="--main-color: ${color.hex};"></div>
                 <div class="app__color-image-container--image" style="--color-gradient: linear-gradient(to bottom right, ${pSBC ( 0, color.hex + "aa", "c" )}, ${pSBC ( 0, color.hex + "aa", "c" )}); --image-path: url('${color.imagePath}');"></div>
+                <button class="app__color-image-container--modal-btn" onclick="openModal(this.parentElement.parentElement.lastElementChild);">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-.001 5.75c.69 0 1.251.56 1.251 1.25s-.561 1.25-1.251 1.25-1.249-.56-1.249-1.25.559-1.25 1.249-1.25zm2.001 12.25h-4v-1c.484-.179 1-.201 1-.735v-4.467c0-.534-.516-.618-1-.797v-1h3v6.265c0 .535.517.558 1 .735v.999z"/></svg>
+                </button>
             </div>
             <div class="app__color-content">
                 <div class="app__color-top-area">
@@ -121,7 +121,7 @@ $(document).ready(() => {
             </div>
             <div class="app__palette-color-modal fullscreen-modal" style="--main-color: ${color.hex};">
                 <div class="fullscreen-modal__inner">
-                    <div class="fullscreen-modal__inner-close-btn">
+                    <div class="fullscreen-modal__inner-close-btn" onclick="closeModal(this);">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z"/></svg>
                     </div>
                     <h1 class="fullscreen-modal__inner-title">${color.name}</h1>
@@ -201,4 +201,24 @@ const copyColorFromBtn = (colorHex, button) => {
             }
         }, 1500);
     }
+}
+
+// open modal 
+const openModal = (modalElement) => {
+    modalElement.classList.add("fullscreen-modal--opening");
+    setTimeout(() => {
+        modalElement.classList.remove("fullscreen-modal--opening");
+        modalElement.classList.add("fullscreen-modal--opened");
+    }, 25);
+}
+
+// close modal
+const closeModal = (buttonElement) => {
+    const modalElement = buttonElement.parentElement.parentElement;
+
+    modalElement.classList.add("fullscreen-modal--opening");
+    modalElement.classList.remove("fullscreen-modal--opened");
+    setTimeout(() => {
+        modalElement.classList.remove("fullscreen-modal--opening");
+    }, 450);
 }

@@ -208,6 +208,10 @@ body {
 ::selection {
   background-color: rgba(55, 71, 79, 0.15); }
 
+@media only screen and (max-width: 500px) {
+  .u-display-none-phone {
+    display: none; } }
+
 /*.btn {
     &:link,
     &:visited {
@@ -304,7 +308,7 @@ body {
   z-index: 99999;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.75);
   transition: opacity .4s; }
   .fullscreen-modal--opening, .fullscreen-modal--opened {
     display: block; }
@@ -315,7 +319,7 @@ body {
   .fullscreen-modal__inner {
     display: block;
     position: absolute;
-    top: 40%;
+    top: 47%;
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: #ffffff;
@@ -353,15 +357,6 @@ body {
     .fullscreen-modal__inner p {
       margin-bottom: 1.25rem;
       overflow: hidden; }
-      .fullscreen-modal__inner p strong, .fullscreen-modal__inner p span {
-        display: block;
-        float: left; }
-      .fullscreen-modal__inner p strong {
-        width: 10rem; }
-      .fullscreen-modal__inner p span {
-        width: calc(100% - 10.75rem);
-        margin-left: .75rem;
-        color: #56707c; }
 
 .topbar {
   background-color: #ffffff;
@@ -423,9 +418,18 @@ body {
     font-size: 1.6rem;
     text-align: right;
     line-height: 4.5rem; }
+  .footer span {
+    margin: 0 1rem; }
+    .footer span:first-child {
+      margin-left: 0; }
+    .footer span:last-child {
+      margin-right: 0; }
+  .footer em {
+    font-style: normal; }
   .footer a {
     color: #2188ff;
-    text-decoration: none; }
+    text-decoration: none;
+    cursor: pointer; }
     .footer a:hover {
       color: #2155ff;
       text-decoration: underline; }
@@ -474,10 +478,34 @@ body {
             width: 100% !important; } }
       .app .app__palette .app__palette-color .app__color-image-container {
         width: 30rem;
-        height: 100%; }
+        height: 100%;
+        position: relative; }
         @media only screen and (max-width: 750px) {
           .app .app__palette .app__palette-color .app__color-image-container {
             height: 30rem; } }
+        .app .app__palette .app__palette-color .app__color-image-container .app__color-image-container--modal-btn {
+          position: absolute;
+          top: .75rem;
+          left: 2rem;
+          width: 2.5rem;
+          height: 2.5rem;
+          border: none;
+          background-color: transparent;
+          border-radius: 50%;
+          box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.2);
+          cursor: pointer;
+          outline: none; }
+          .app .app__palette .app__palette-color .app__color-image-container .app__color-image-container--modal-btn svg {
+            width: 100%;
+            height: 100%;
+            fill: #ffffff;
+            opacity: .8;
+            transition: opacity .2s, transform .2s; }
+          .app .app__palette .app__palette-color .app__color-image-container .app__color-image-container--modal-btn:hover svg {
+            transform: scale(1.1);
+            opacity: 1; }
+          .app .app__palette .app__palette-color .app__color-image-container .app__color-image-container--modal-btn:active svg {
+            transform: scale(1); }
         .app .app__palette .app__palette-color .app__color-image-container .app__color-image-container--color, .app .app__palette .app__palette-color .app__color-image-container .app__color-image-container--image {
           float: left;
           height: 100%; }
@@ -633,3 +661,12 @@ body {
                 transition: opacity .2s;
                 font-size: .85rem;
                 display: none; }
+      .app .app__palette .app__palette-color-modal p strong, .app .app__palette .app__palette-color-modal p span {
+        display: block;
+        float: left; }
+      .app .app__palette .app__palette-color-modal p strong {
+        width: 10rem; }
+      .app .app__palette .app__palette-color-modal p span {
+        width: calc(100% - 10.75rem);
+        margin-left: .75rem;
+        color: #56707c; }

@@ -14,9 +14,26 @@
         line-height: 4.5rem;
     }
 
+    span {
+        margin: 0 1rem;
+
+        &:first-child {
+            margin-left: 0;
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    em {
+        font-style: normal;
+    }
+
     a {
         color: #2188ff;
         text-decoration: none;
+        cursor: pointer;
 
         &:hover {
             color: #2155ff;
