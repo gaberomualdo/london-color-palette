@@ -319,7 +319,7 @@ body {
   .fullscreen-modal__inner {
     display: block;
     position: absolute;
-    top: 47%;
+    top: 48%;
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: #ffffff;
@@ -328,6 +328,9 @@ body {
     width: 65rem;
     padding: 3rem 4rem;
     font-size: 1.6rem; }
+    @media only screen and (max-width: 800px) {
+      .fullscreen-modal__inner {
+        width: calc(100% - 3rem); } }
     .fullscreen-modal__inner-close-btn {
       position: absolute;
       top: 1.5rem;
@@ -672,6 +675,11 @@ body {
       .app .app__palette .app__palette-color-modal p strong, .app .app__palette .app__palette-color-modal p span {
         display: block;
         float: left; }
+        @media only screen and (max-width: 800px) {
+          .app .app__palette .app__palette-color-modal p strong, .app .app__palette .app__palette-color-modal p span {
+            clear: both;
+            margin-left: 0 !important;
+            width: 100% !important; } }
       .app .app__palette .app__palette-color-modal p strong {
         width: 10rem; }
       .app .app__palette .app__palette-color-modal p span {

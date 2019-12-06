@@ -334,6 +334,12 @@
                     strong, span {
                         display: block;
                         float: left;
+
+                        @media only screen and (max-width: $break-tablet-small) {
+                            clear: both;
+                            margin-left: 0 !important;
+                            width: 100% !important;
+                        }
                     }
         
                     strong {

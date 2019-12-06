@@ -1,5 +1,5 @@
 {
-  "name": "londonpalette",
+  "name": "London-Color-Palette",
   "version": "1.0.0",
   "description": "A color palette built from famous London landmarks.",
   "main": "index.js",
@@ -12,7 +12,7 @@
   },
   "keywords": [
     "colors",
-    "colorpalette",
+    "color-palette",
     "london",
     "landmarks",
     "uicolors"
