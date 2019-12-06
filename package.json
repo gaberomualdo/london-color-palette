@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/xtrp/flowerpalette.git"
+    "url": "git+https://github.com/xtrp/London-Color-Palette.git"
   },
   "keywords": [
     "colors",
@@ -20,9 +20,9 @@
   "author": "Fred Adams (@xtrp)",
   "license": "Copyrighted",
   "bugs": {
-    "url": "https://github.com/xtrp/flowerpalette/issues"
+    "url": "https://github.com/xtrp/London-Color-Palette/issues"
   },
-  "homepage": "https://github.com/xtrp/flowerpalette#readme",
+  "homepage": "https://github.com/xtrp/London-Color-Palette#readme",
   "devDependencies": {
     "node-sass": "^4.13.0"
   }
