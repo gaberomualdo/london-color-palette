@@ -1,9 +1,9 @@
 const colors = [
     {
-        name: "Shard Blue",
-        description: "The Shard, Central London",
-        imagePath: "../img/shard.jpg",
-        hex: "#2188ff",
+        name: "Eye Purple",
+        description: "London Eye",
+        imagePath: "../img/londoneye.jpg",
+        hex: "#BC52F1",
         modalHTML: `
         <p><strong>Location:</strong><span>The Shard, Central London, SW5 FT1</span></p>
         <p><strong>Represents:</strong><span>Intellect, security, trust, uniqueness</span></p>
@@ -12,9 +12,9 @@ const colors = [
     },
     {
         name: "Shard Blue",
-        description: "The Shard, Central London",
+        description: "The Shard",
         imagePath: "../img/shard.jpg",
-        hex: "#e74c3c",
+        hex: "#1e7ae4",
         modalHTML: `
         <p><strong>Location:</strong><span>The Shard, Central London, SW5 FT1</span></p>
         <p><strong>Represents:</strong><span>Intellect, security, trust, uniqueness</span></p>
@@ -22,10 +22,10 @@ const colors = [
         `
     },
     {
-        name: "Shard Blue",
-        description: "The Shard, Central London",
-        imagePath: "../img/shard.jpg",
-        hex: "#2188ff",
+        name: "Hyde Park Green",
+        description: "Hyde Park",
+        imagePath: "../img/hydepark.jpg",
+        hex: "#55c57a",
         modalHTML: `
         <p><strong>Location:</strong><span>The Shard, Central London, SW5 FT1</span></p>
         <p><strong>Represents:</strong><span>Intellect, security, trust, uniqueness</span></p>
@@ -33,10 +33,10 @@ const colors = [
         `
     },
     {
-        name: "Shard Blue",
-        description: "The Shard, Central London",
-        imagePath: "../img/shard.jpg",
-        hex: "#2188ff",
+        name: "Telephone Red",
+        description: "Red Telephone Box",
+        imagePath: "../img/telephonebox.jpg",
+        hex: "#ce1e02",
         modalHTML: `
         <p><strong>Location:</strong><span>The Shard, Central London, SW5 FT1</span></p>
         <p><strong>Represents:</strong><span>Intellect, security, trust, uniqueness</span></p>
@@ -44,10 +44,10 @@ const colors = [
         `
     },
     {
-        name: "Shard Blue",
-        description: "The Shard, Central London",
-        imagePath: "../img/shard.jpg",
-        hex: "#2188ff",
+        name: "Big Ben Gold",
+        description: "Elizabeth Tower",
+        imagePath: "../img/elizabethtower.jpg",
+        hex: "#FEC206",
         modalHTML: `
         <p><strong>Location:</strong><span>The Shard, Central London, SW5 FT1</span></p>
         <p><strong>Represents:</strong><span>Intellect, security, trust, uniqueness</span></p>
@@ -55,10 +55,10 @@ const colors = [
         `
     },
     {
-        name: "Shard Blue",
-        description: "The Shard, Central London",
-        imagePath: "../img/shard.jpg",
-        hex: "#2188ff",
+        name: "Cathedral Mist",
+        description: "St. Paul's Cathedral",
+        imagePath: "../img/stpauls.jpg",
+        hex: "#9db2b7",
         modalHTML: `
         <p><strong>Location:</strong><span>The Shard, Central London, SW5 FT1</span></p>
         <p><strong>Represents:</strong><span>Intellect, security, trust, uniqueness</span></p>

@@ -31,12 +31,12 @@
     }
 
     a {
-        color: #2188ff;
+        color: $color-link;
         text-decoration: none;
         cursor: pointer;
 
         &:hover {
-            color: #2155ff;
+            color: $color-link-hover;
             text-decoration: underline;
         }
     }

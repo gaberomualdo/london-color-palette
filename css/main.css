@@ -185,6 +185,7 @@ Github: https://github.com/prevwong/awesome-select/
     .aw_cursor_pointer.animate .inner {
       height: 100%; }
 
+/*@import "abstracts/variables-dark";*/
 *,
 *::before,
 *::after {
@@ -358,18 +359,30 @@ body {
       margin-bottom: 3.5rem;
       color: var(--main-color); }
     .fullscreen-modal__inner p {
-      margin-bottom: 1.25rem;
       overflow: hidden; }
+      .fullscreen-modal__inner p:not(:last-child) {
+        margin-bottom: 1.25rem; }
 
 .topbar {
   background-color: #ffffff;
   box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.1);
   height: 5.5rem;
   box-sizing: border-box;
-  padding: 1rem 2.5rem; }
+  padding: 1rem 2.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  transition: max-height .3s; }
+  @media only screen and (max-width: 800px) {
+    .topbar {
+      height: auto;
+      max-height: 5.5rem;
+      overflow: hidden; } }
   @media only screen and (max-width: 500px) {
     .topbar {
       padding: 1rem 1.5rem; } }
+  .topbar--taller {
+    max-height: 10rem; }
   .topbar > * {
     display: block; }
   .topbar__logo {
@@ -396,6 +409,13 @@ body {
     font-size: 1.4rem;
     margin-right: 1rem;
     transition: opacity .2s; }
+    @media only screen and (max-width: 750px) {
+      .topbar__color-copied-alert {
+        margin-right: 0;
+        margin-top: 1rem;
+        width: 100%;
+        text-align: center;
+        transition: none; } }
     .topbar__color-copied-alert:not(.topbar__color-copied-alert--displayed) {
       opacity: 0; }
   .topbar__color-format {
@@ -441,6 +461,10 @@ body {
   width: 100%;
   height: calc(100vh - 10.5rem);
   padding: 2.5rem 2.5rem 0 2.5rem; }
+  @media only screen and (max-width: 1150px) {
+    .app {
+      overflow: hidden;
+      height: auto; } }
   @media only screen and (max-width: 500px) {
     .app {
       padding: 1.5rem 1.5rem 0 1.5rem; } }
@@ -493,21 +517,22 @@ body {
           width: 2.5rem;
           height: 2.5rem;
           border: none;
-          background-color: transparent;
+          background-color: var(--main-color);
           border-radius: 50%;
           box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.2);
           cursor: pointer;
-          outline: none; }
+          outline: none;
+          opacity: .8;
+          transition: opacity .2s, transform .2s;
+          overflow: hidden; }
           .app .app__palette .app__palette-color .app__color-image-container .app__color-image-container--modal-btn svg {
             width: 100%;
             height: 100%;
-            fill: #ffffff;
-            opacity: .8;
-            transition: opacity .2s, transform .2s; }
-          .app .app__palette .app__palette-color .app__color-image-container .app__color-image-container--modal-btn:hover svg {
+            fill: #ffffff; }
+          .app .app__palette .app__palette-color .app__color-image-container .app__color-image-container--modal-btn:hover {
             transform: scale(1.1);
             opacity: 1; }
-          .app .app__palette .app__palette-color .app__color-image-container .app__color-image-container--modal-btn:active svg {
+          .app .app__palette .app__palette-color .app__color-image-container .app__color-image-container--modal-btn:active {
             transform: scale(1); }
         .app .app__palette .app__palette-color .app__color-image-container .app__color-image-container--color, .app .app__palette .app__palette-color .app__color-image-container .app__color-image-container--image {
           float: left;
@@ -666,7 +691,7 @@ body {
                 position: absolute;
                 bottom: 0.35rem;
                 right: 0.35rem;
-                color: #fff;
+                color: #ffffff;
                 line-height: 1;
                 /*opacity: .65;*/
                 transition: opacity .2s;
