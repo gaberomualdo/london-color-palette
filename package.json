@@ -4,7 +4,7 @@
   "description": "A color palette built from famous London landmarks.",
   "main": "index.js",
   "scripts": {
-    "compile:sass": "node-sass sass/main.scss css/main.css -w"
+    "compile:sass": "node-sass sass/home.scss css/home.css -w && node-sass sass/palette.scss css/palette.css -w"
   },
   "repository": {
     "type": "git",
