@@ -2,7 +2,7 @@ const colors = [
     {
         name: "Eye Purple",
         description: "London Eye",
-        imagePath: "../img/londoneye.jpg",
+        imagePath: "/london/images/londoneye.jpg",
         hex: "#BC52F1",
         modalHTML: `
         <p><strong>Location:</strong><span>The Shard, Central London, SW5 FT1</span></p>
@@ -13,7 +13,7 @@ const colors = [
     {
         name: "Shard Blue",
         description: "The Shard",
-        imagePath: "../img/shard.jpg",
+        imagePath: "/london/images/shard.jpg",
         hex: "#1e7ae4",
         modalHTML: `
         <p><strong>Location:</strong><span>The Shard, Central London, SW5 FT1</span></p>
@@ -24,7 +24,7 @@ const colors = [
     {
         name: "Hyde Park Green",
         description: "Hyde Park",
-        imagePath: "../img/hydepark.jpg",
+        imagePath: "/london/images/hydepark.jpg",
         hex: "#55c57a",
         modalHTML: `
         <p><strong>Location:</strong><span>The Shard, Central London, SW5 FT1</span></p>
@@ -35,7 +35,7 @@ const colors = [
     {
         name: "Telephone Red",
         description: "Red Telephone Box",
-        imagePath: "../img/telephonebox.jpg",
+        imagePath: "/london/images/telephonebox.jpg",
         hex: "#ce1e02",
         modalHTML: `
         <p><strong>Location:</strong><span>The Shard, Central London, SW5 FT1</span></p>
@@ -46,7 +46,7 @@ const colors = [
     {
         name: "Big Ben Gold",
         description: "Elizabeth Tower",
-        imagePath: "../img/elizabethtower.jpg",
+        imagePath: "/london/images/elizabethtower.jpg",
         hex: "#FEC206",
         modalHTML: `
         <p><strong>Location:</strong><span>The Shard, Central London, SW5 FT1</span></p>
@@ -57,7 +57,7 @@ const colors = [
     {
         name: "Cathedral Mist",
         description: "St. Paul's Cathedral",
-        imagePath: "../img/stpauls.jpg",
+        imagePath: "/london/images/stpauls.jpg",
         hex: "#9db2b7",
         modalHTML: `
         <p><strong>Location:</strong><span>The Shard, Central London, SW5 FT1</span></p>

@@ -32,6 +32,56 @@
         float: left;
     }
 
+        &__home-link {
+            display: inline-block;
+            overflow-y: hidden;
+            vertical-align: bottom;
+            height: 3.5rem;
+            width: 5.5rem;
+            position: relative;
+            transform-origin: center left;
+            transform: scale(.65) translateX(-.5rem);
+            transition: transform .2s, opacity .2s;
+            opacity: .9;
+            
+            svg {
+                height: 3.5rem;
+                width: auto;
+                fill: darken($color-grey-dark, 10%);
+
+                @media only screen and (min-width: $break-mobile) {
+                    &.rectangle {
+                        transform-origin: center left;
+                        transform: scale(1.15, .175);
+                        transition: opacity .2s;
+                        opacity: 0;
+                        position: absolute;
+                        left: 1.5rem;
+                    }
+                }
+            }
+
+            @media only screen and (min-width: $break-mobile) {
+                &:hover {
+                    transform: scale(.65) translateX(-1.75rem);
+                    opacity: 1;
+                    
+                    svg.rectangle {
+                        opacity: 1;
+                    }
+                }
+            }
+
+            @media only screen and (max-width: $break-mobile) {
+                transition: opacity .125s;
+                width: 4.5rem;
+
+                &:active {
+                    opacity: .2;
+                }
+            }
+        }
+
         &__title, &__description {
             display: inline;
             vertical-align: baseline;
@@ -39,6 +89,7 @@
 
         &__title {
             font-size: 1.95rem;
+            margin-left: -1.5rem;
         }
 
         &__description {

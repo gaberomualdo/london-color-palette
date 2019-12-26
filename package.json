@@ -1,28 +1,30 @@
 {
-  "name": "London-Color-Palette",
+  "name": "City-Color-Palette",
   "version": "1.0.0",
-  "description": "A color palette built from famous London landmarks.",
+  "description": "A color palette built from famous cities and landmarks.",
   "main": "index.js",
   "scripts": {
-    "compile:sass": "node-sass sass/home.scss css/home.css -w && node-sass sass/palette.scss css/palette.css -w"
+    "compile:sass:home": "node-sass assets/sass/home.scss assets/css/home.css -w",
+    "compile:sass:palette": "node-sass assets/sass/palette.scss assets/css/palette.css -w"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/xtrp/London-Color-Palette.git"
+    "url": "git+https://github.com/xtrp/City-Color-Palette.git"
   },
   "keywords": [
     "colors",
     "color-palette",
-    "london",
+    "cities",
+    "city",
     "landmarks",
     "uicolors"
   ],
   "author": "Fred Adams (@xtrp)",
   "license": "Copyrighted",
   "bugs": {
-    "url": "https://github.com/xtrp/London-Color-Palette/issues"
+    "url": "https://github.com/xtrp/City-Color-Palette/issues"
   },
-  "homepage": "https://github.com/xtrp/London-Color-Palette#readme",
+  "homepage": "https://github.com/xtrp/City-Color-Palette#readme",
   "devDependencies": {
     "node-sass": "^4.13.0"
   }

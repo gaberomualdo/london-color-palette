@@ -387,11 +387,47 @@ body {
     display: block; }
   .topbar__logo {
     float: left; }
+  .topbar__home-link {
+    display: inline-block;
+    overflow-y: hidden;
+    vertical-align: bottom;
+    height: 3.5rem;
+    width: 5.5rem;
+    position: relative;
+    transform-origin: center left;
+    transform: scale(0.65) translateX(-0.5rem);
+    transition: transform .2s, opacity .2s;
+    opacity: .9; }
+    .topbar__home-link svg {
+      height: 3.5rem;
+      width: auto;
+      fill: #222c31; }
+      @media only screen and (min-width: 750px) {
+        .topbar__home-link svg.rectangle {
+          transform-origin: center left;
+          transform: scale(1.15, 0.175);
+          transition: opacity .2s;
+          opacity: 0;
+          position: absolute;
+          left: 1.5rem; } }
+    @media only screen and (min-width: 750px) {
+      .topbar__home-link:hover {
+        transform: scale(0.65) translateX(-1.75rem);
+        opacity: 1; }
+        .topbar__home-link:hover svg.rectangle {
+          opacity: 1; } }
+    @media only screen and (max-width: 750px) {
+      .topbar__home-link {
+        transition: opacity .125s;
+        width: 4.5rem; }
+        .topbar__home-link:active {
+          opacity: .2; } }
   .topbar__title, .topbar__description {
     display: inline;
     vertical-align: baseline; }
   .topbar__title {
-    font-size: 1.95rem; }
+    font-size: 1.95rem;
+    margin-left: -1.5rem; }
   .topbar__description {
     font-size: 1.6rem;
     vertical-align: baseline;
