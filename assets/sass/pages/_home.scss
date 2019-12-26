@@ -1,0 +1,56 @@
+.tabs {
+
+    &__tabselect {
+        display: block;
+        overflow: hidden;
+        height: auto;
+        margin: 2rem 0;
+        margin-top: 3.5rem;
+
+        &-button {
+            display: inline-block;
+            height: 3.5rem;
+            line-height: 3.5rem;
+            padding: 0 1.25rem;
+            background-color: transparent;
+            font-size: 1.75rem;
+            text-transform: uppercase;
+            letter-spacing: .1rem;
+            color: lighten($color-grey-default, 25%);
+            border-radius: 3px;
+            cursor: pointer;
+            transition: background-color .2s ease-in-out, color .2s ease-in-out;
+
+            &:not(:last-child) {
+                margin-right: 1rem;
+            }
+
+            &:hover {
+                background-color: $color-grey-light-2;
+                color: $color-grey-default;
+            }
+        }
+    }
+
+    &__sections-section {
+        width: 100%;
+        overflow: hidden;
+        height: auto;
+        display: none;
+    }
+
+    // tab functionality
+    &--show-about .tabs__tabselect-button--about,
+    &--show-colors .tabs__tabselect-button--colors,
+    &--show-cities .tabs__tabselect-button--cities {
+        background-color: lighten($color-grey-default, 10%);
+        color: $color-white;
+    }
+
+    &--show-cities .tabs__sections-section--cities,
+    &--show-colors .tabs__sections-section--colors,
+    &--show-about .tabs__sections-section--about {
+        display: block;
+    }
+
+}

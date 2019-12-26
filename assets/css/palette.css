@@ -465,6 +465,31 @@ body {
   min-height: 100vh;
   background-color: #eceff1; }
 
+.center-area {
+  box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.1);
+  width: 750px;
+  min-height: 100vh;
+  margin: 0 auto;
+  background-color: #ffffff;
+  box-sizing: border-box;
+  padding: 0 2.5rem; }
+  .center-area__topbar {
+    padding-top: 2.5rem; }
+    .center-area__topbar-logo-title, .center-area__topbar-logo-description {
+      display: inline;
+      vertical-align: baseline; }
+    .center-area__topbar-logo-title {
+      font-size: 1.95rem;
+      margin-left: -1.5rem; }
+    .center-area__topbar-logo-description {
+      font-size: 1.6rem;
+      vertical-align: baseline;
+      margin-left: 0.5rem;
+      color: #8ba2ae; }
+      @media only screen and (max-width: 1150px) {
+        .center-area__topbar-logo-description {
+          display: none; } }
+
 .footer {
   padding: 0 2.5rem;
   height: 5rem;

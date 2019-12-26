@@ -1,0 +1,36 @@
+.center-area {
+    box-shadow: 0 .25rem 1rem rgba($color-black, .1);
+    width: 750px;
+    min-height: 100vh;
+    margin: 0 auto;
+    background-color: $color-white;
+    box-sizing: border-box;
+    padding: 0 2.5rem;
+
+    &__topbar {
+        padding-top: 2.5rem;
+
+        &-logo {
+            &-title, &-description {
+                display: inline;
+                vertical-align: baseline;
+            }
+
+            &-title {
+                font-size: 1.95rem;
+                margin-left: -1.5rem;
+            }
+
+            &-description {
+                font-size: 1.6rem;
+                vertical-align: baseline;
+                margin-left: 0.5rem;
+                color: lighten($color-grey-dark, 35%);
+
+                @media only screen and (max-width: $break-tablet) {
+                    display: none;
+                }
+            }
+        }
+    }
+}
