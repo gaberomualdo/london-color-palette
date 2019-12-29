@@ -3,7 +3,6 @@
 @import "abstracts/functions";
 @import "abstracts/mixins";
 @import "abstracts/variables";
-/*@import "abstracts/variables-dark";*/
 
 @import "base/base";
 @import "base/animations";
@@ -11,9 +10,9 @@
 @import "base/utilities";
 
 @import "components/modal";
-@import "components/card";
 
 @import "layout/topbar";
 @import "layout/container";
-@import "layout/center-area";
 @import "layout/footer";
+
+@import "pages/palette";

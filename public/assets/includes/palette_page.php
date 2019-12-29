@@ -4,7 +4,7 @@
 <?php
 $page_css_filename = "palette";
 
-include "app_variables.php";
+include "../../data/app_variables.php";
 include "head.php";
 ?>
 

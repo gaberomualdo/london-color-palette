@@ -4,7 +4,7 @@
 <?php
 $page_css_filename = "home";
 
-include "assets/includes/app_variables.php";
+include "data/app_variables.php";
 include "assets/includes/head.php";
 
 // parsedown for reading markdown into HTML
@@ -37,7 +37,7 @@ include "assets/php/vendors/Parsedown.php";
                     <div class="tabs__sections-section tabs__sections-section--about">
                         <?php
                             $Parsedown = new Parsedown();
-                            echo $Parsedown->text(file_get_contents("assets/markdown/about.markdown"));
+                            echo $Parsedown->text(file_get_contents("data/about.markdown"));
                         ?>
                     </div>
                 </div>
@@ -52,7 +52,7 @@ include "assets/php/vendors/Parsedown.php";
     </div>
 
     <!-- Scripts -->
-    <script src="palettes.js"></script>
+    <script src="/data/palettes.js"></script>
     <script src="/assets/js/home.js"></script>
 </body>
 

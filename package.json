@@ -1,11 +1,11 @@
 {
-  "name": "City-Color-Palette",
+  "name": "city-color-palette",
   "version": "1.0.0",
   "description": "Color palettes built from famous cities and landmarks.",
   "main": "index.js",
   "scripts": {
-    "compile:sass:home": "node-sass assets/sass/home.scss assets/css/home.css -w",
-    "compile:sass:palette": "node-sass assets/sass/palette.scss assets/css/palette.css -w"
+    "dev:compile:sass:home": "node-sass public/assets/sass/home.scss public/assets/css/home.css -w",
+    "dev:compile:sass:palette": "node-sass public/assets/sass/palette.scss public/assets/css/palette.css -w"
   },
   "repository": {
     "type": "git",
