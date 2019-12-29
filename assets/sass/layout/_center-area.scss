@@ -1,16 +1,45 @@
 .center-area {
     box-shadow: 0 .25rem 1rem rgba($color-black, .1);
-    width: 750px;
+    width: 950px;
     min-height: 100vh;
     margin: 0 auto;
     background-color: $color-white;
     box-sizing: border-box;
-    padding: 0 2.5rem;
+    padding: 0 3.5rem;
+    padding-bottom: .5rem;
+    position: relative;
+
+    @media only screen and (max-width: 1000px) {
+        width: 750px;
+    }
+
+    @media only screen and (max-width: 800px) {
+        width: 100%;
+    }
+
+    @media only screen and (max-width: $break-tablet) {
+        padding: 0 2.5rem;
+    }
+
+    @media only screen and (max-width: $break-mobile) {
+        padding: 0 1.5rem;
+    }
 
     &__topbar {
         padding-top: 2.5rem;
+        zoom: 1.1;
 
         &-logo {
+            height: 4rem;
+
+            img {
+                height: 3.5rem;
+                margin-right: 3rem;
+                vertical-align: bottom;
+                box-shadow: 0 .25rem 1rem rgba($color-black, .2);
+                border-radius: .47rem;
+            }
+
             &-title, &-description {
                 display: inline;
                 vertical-align: baseline;
@@ -27,7 +56,7 @@
                 margin-left: 0.5rem;
                 color: lighten($color-grey-dark, 35%);
 
-                @media only screen and (max-width: $break-tablet) {
+                @media only screen and (max-width: $break-mobile) {
                     display: none;
                 }
             }

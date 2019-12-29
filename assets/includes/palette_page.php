@@ -12,7 +12,7 @@ include "head.php";
     <div class="container">
         <nav class="topbar">
             <div class="topbar__logo">
-                <a class="topbar__home-link" href="/">
+                <a class="topbar__home-link" href="<?php echo ($palette_type == "city" ? "/#cities" : "/#colors"); ?>">
                     <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z"/>
                     </svg><svg class="rectangle" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 0h-24v24h24v-24z"/></svg>
                 </a>

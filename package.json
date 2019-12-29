@@ -1,7 +1,7 @@
 {
   "name": "City-Color-Palette",
   "version": "1.0.0",
-  "description": "A color palette built from famous cities and landmarks.",
+  "description": "Color palettes built from famous cities and landmarks.",
   "main": "index.js",
   "scripts": {
     "compile:sass:home": "node-sass assets/sass/home.scss assets/css/home.css -w",

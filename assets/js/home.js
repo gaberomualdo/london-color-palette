@@ -1,3 +1,14 @@
+// event fire fn, code taken from user Kooilnc from https://stackoverflow.com/questions/2705583/how-to-simulate-a-click-with-javascript
+const fireEvent = (el, etype) => {
+    if (el.fireEvent) {
+        el.fireEvent('on' + etype);
+    }else {
+        var evObj = document.createEvent('Events');
+        evObj.initEvent(etype, true, false);
+        el.dispatchEvent(evObj);
+    }
+}
+
 // display palette cards
 palettes.forEach((palette) => {
     if(palette.type == "city") {
@@ -17,7 +28,7 @@ palettes.forEach((palette) => {
                     <strong>${palette.population}</strong>
                 </p>
                 <p>
-                    <span><svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M6 7v-7h13v10h5v14h-23v-17h5zm0 16v-4h-1v4h1zm8-4h-3v4h3v-4zm6 0h-1v4h1v-4zm2-7h-3v6h2v4h1v-10zm-5-10h-9v20h1v-5h7v5h1v-20zm-13 20v-4h2v-9h-3v13h1zm17-6h-1v-2h1v2zm-17-2h1v2h-1v-2zm8 1h-2v-2h2v2zm3 0h-2v-2h2v2zm-10-4v2h-1v-2h1zm7 1h-2v-2h2v2zm3 0h-2v-2h2v2zm-3-3h-2v-2h2v2zm3 0h-2v-2h2v2zm-3-3h-2v-2h2v2zm3 0h-2v-2h2v2z"/></svg></span>
+                    <span><svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M6 7v-7h13v10h5v14h-23v-17h5zm0 16v-4h-1v4h1zm8-4h-3v4h3v-4zm6 0h-1v4h1v-4zm2-7h-3v6h2v4h1v-10zm-5-10h-9v20h1v-5h7v5h1v-20zm-13 20v-4h2v-9h-3v13h1zm17-6h-1v-2h1v2zm-17-2h1v2h-1v-2zm8 1h-2v-2h2v2zm3 0h-2v-2h2v2zm-10-4v2h-1v-2h1zm7 1h-2v-2h2v2zm3 0h-2v-2h2v2zm-3-3h-2v-2h2v2zm3 0h-2v-2h2v2zm-3-3h-2v-2h2v2zm3 0h-2v-2h2v2z"/></svg></span>
                     <strong>${palette.landmarks}</strong>    
                 </p>
             </div>
@@ -32,16 +43,13 @@ palettes.forEach((palette) => {
             <div class="card__content card__content--color">
                 <h1 class="card__content-title">${palette.name}</h1>
                 <p>
-                    <span>Represents:</span>
-                    <strong>${palette.represents}</strong>
+                    <strong><span>Represents:</span>${palette.represents}</strong>
                 </p>
                 <p>
-                    <span>Used by:</span>
-                    <strong>${palette.used_by}</strong>
+                    <strong><span>Used by:</span>${palette.used_by}</strong>
                 </p>
                 <p>
-                    <span>Cities: </span>
-                    <strong>${palette.cities}</strong>    
+                    <strong><span>Cities:</span>${palette.cities}</strong>    
                 </p>
             </div>
         </a>
@@ -56,18 +64,58 @@ Array.from(document.querySelectorAll(".tabs__tabselect-button")).forEach((tabBtn
             document.querySelector(".tabs").classList.remove("tabs--show-cities");
             document.querySelector(".tabs").classList.remove("tabs--show-colors");
             document.querySelector(".tabs").classList.remove("tabs--show-about");
+            window.location.hash = "";
         }
 
         const btn = e.target;
         if(btn.classList.contains("tabs__tabselect-button--cities")) {
             removeActiveClassesOnTabsContainer();
             document.querySelector(".tabs").classList.add("tabs--show-cities");
+            window.location.hash = "#cities";
         }else if(btn.classList.contains("tabs__tabselect-button--colors")) {
             removeActiveClassesOnTabsContainer();
             document.querySelector(".tabs").classList.add("tabs--show-colors");
+            window.location.hash = "#colors";
         }else if(btn.classList.contains("tabs__tabselect-button--about")) {
             removeActiveClassesOnTabsContainer();
             document.querySelector(".tabs").classList.add("tabs--show-about");
+            window.location.hash = "#about";
         }
     });
 });
+
+// tab hash functionality
+switch (window.location.hash) {
+    case "#cities":
+        fireEvent(document.querySelector(".tabs__tabselect-button--cities"), "click");
+        break;
+    case "#colors":
+        fireEvent(document.querySelector(".tabs__tabselect-button--colors"), "click");
+        break;
+    case "#about":
+        fireEvent(document.querySelector(".tabs__tabselect-button--about"), "click");
+        break;
+    default:
+
+}
+
+// tab select box sticky top position
+let tabSelectElementOriginalOffsetTop;
+const checkTabSelectPositionTypeFirstTime = () => {
+    const tabSelectElement = document.querySelector(".tabs__tabselect");
+    tabSelectElementOriginalOffsetTop = tabSelectElement.getBoundingClientRect().top + window.scrollY;
+    checkTabSelectPositionType();
+}
+
+const checkTabSelectPositionType = () => {
+    const tabSelectElement = document.querySelector(".tabs__tabselect");
+    console.log("body scrolltop: " + window.pageYOffset);
+    console.log("original: " + tabSelectElementOriginalOffsetTop);
+    if(window.pageYOffset >= tabSelectElementOriginalOffsetTop) {
+        tabSelectElement.classList.add("fixed");
+    }else {
+        tabSelectElement.classList.remove("fixed");
+    }
+}
+window.addEventListener("scroll", checkTabSelectPositionType);
+checkTabSelectPositionTypeFirstTime();

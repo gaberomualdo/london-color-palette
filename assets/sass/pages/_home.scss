@@ -1,11 +1,20 @@
 .tabs {
-
+    position: relative;
+    
     &__tabselect {
         display: block;
-        overflow: hidden;
-        height: auto;
-        margin: 2rem 0;
-        margin-top: 3.5rem;
+        height: 6.5rem;
+        padding: 1.5rem 1.5rem;
+        border-bottom: 1px solid darken($color-grey-light-2, 5%);
+        margin: 3.5rem 0;
+        margin-top: 3rem;
+        zoom: .95;
+        width: calc(100% + 3rem);
+        margin-left: -1.5rem;
+        background-color: $color-white;
+        position: sticky;
+        top: 0;
+        z-index: 9999;
 
         &-button {
             display: inline-block;
@@ -34,9 +43,13 @@
 
     &__sections-section {
         width: 100%;
-        overflow: hidden;
-        height: auto;
         display: none;
+    }
+
+    // about page
+    .tabs__sections-section--about {
+        font-size: 1.6rem;
+        margin-bottom: 4rem;
     }
 
     // tab functionality
@@ -52,5 +65,11 @@
     &--show-about .tabs__sections-section--about {
         display: block;
     }
+}
 
+.footer {
+    padding-left: 0;
+    padding-right: 0;
+    border-top: 1px solid $color-grey-light-2;
+    margin-top: .5rem;
 }

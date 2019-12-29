@@ -1,0 +1,114 @@
+.card {
+    display: block;
+    float: left;
+    overflow: hidden;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 .25rem 1rem rgba($color-black, .1);
+    text-decoration: none;
+    color: inherit;
+    transition: opacity .2s, transform .2s, box-shadow .2s;
+    background-color: $color-white;
+    margin-bottom: 2.5rem;
+    margin-right: 2.5rem;
+    backface-visibility: hidden;
+    opacity: .9;
+
+    &:hover {
+        opacity: 1;
+        transform: scale(1.02);
+        box-shadow: 0 .375rem 1.5rem rgba($color-black, .1);
+    }
+
+    &:active {
+        transform: scale(1);
+        box-shadow: 0 .25rem 1rem rgba($color-black, .1);
+    }
+
+    // width and margin (3 per row on >100, 2 per row >800, 1 per row <800)
+    @media only screen and (min-width: 1000px) {
+        width: calc((100% / 3) - (( (3 - 1) * (2.5rem) ) / 3));
+        &:nth-child(3), &:nth-child(6), &:nth-child(9), &:nth-child(12) {
+            margin-right: 0;
+        }
+    }
+    @media only screen and (max-width: 1000px) and (min-width: 800px) {
+        width: calc((100% / 2) - (( (2 - 1) * (2.5rem) ) / 2));
+        &:nth-child(even) {
+            margin-right: 0;
+        }
+    }
+
+    @media only screen and (max-width: 800px) {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    * {
+        backface-visibility: hidden;
+    }
+
+    &__image-container {
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+        display: block;
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    &__content {
+        display: block;
+        height: 19.75rem;
+        overflow: hidden;
+        box-sizing: border-box;
+        padding: 1.75rem 2.5rem;
+
+        &-title {
+            font-size: 2.35rem;
+            line-height: 3.25rem;
+            height: 3.25rem;
+            margin-bottom: 1.25rem;
+        }
+
+        p {
+            height: 3.5rem;
+            
+            &:not(:last-child) {
+                margin-bottom: .25rem;
+            }
+
+            * {
+                display: block;
+                float: left;
+                font-weight: normal;
+                color: lighten($color-grey-default, 15%);
+                font-size: 1.5rem;
+                line-height: 3.5rem;
+                height: 3.5rem;
+            }
+
+            & > span {
+                width: 4.5rem;
+                font-size: 2.5rem;
+            }
+
+            svg {
+                height: 2.5rem;
+                margin: .5rem 0;
+                width: auto;
+                fill: darken($color-grey-default, 5%);
+            }
+
+            strong span {
+                width: 9.5rem;
+                font-weight: bold;
+                text-decoration: underline;
+                margin-right: .5rem;
+            }
+        }
+    }
+}

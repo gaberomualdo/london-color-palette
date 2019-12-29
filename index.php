@@ -16,16 +16,16 @@ include "assets/php/vendors/Parsedown.php";
         <div class="center-area">
             <nav class="center-area__topbar">
                 <a class="center-area__topbar-logo">
-                    <img src="assets/images/icon.png" alt="<?= $app_details["name"] ?> Logo">
+                    <img src="assets/favicon/icon.png" alt="<?= $app_details["name"] ?> Logo">
                     <h1 class="center-area__topbar-logo-title"><?= $app_details["name"] ?></h1>
                     <p class="center-area__topbar-logo-description"><?= $app_details["description"] ?></p>
                 </a>
             </nav>
             <div class="tabs tabs--show-cities">
                 <ul class="tabs__tabselect">
-                    <li class="tabs__tabselect-button tabs__tabselect-button--cities">Cities</li>
-                    <li class="tabs__tabselect-button tabs__tabselect-button--colors">Colors</li>
-                    <li class="tabs__tabselect-button tabs__tabselect-button--about">About</li>
+                    <li class="tabs__tabselect-button tabs__tabselect-button--cities">Cities</li
+                    ><li class="tabs__tabselect-button tabs__tabselect-button--colors">Colors</li
+                    ><li class="tabs__tabselect-button tabs__tabselect-button--about">About</li>
                 </ul>
                 <div class="tabs__sections">
                     <div class="tabs__sections-section tabs__sections-section--cities">
@@ -41,7 +41,13 @@ include "assets/php/vendors/Parsedown.php";
                         ?>
                     </div>
                 </div>
+                <p style="clear:both;"></p>
             </div>
+            <footer class="footer">
+                <p class="footer__credits">
+                    Built by <a href="<?= $app_details["creator"]["url"] ?>" target="_blank"><?= $app_details["creator"]["name"] ?></a><em class="u-display-none-phone"> &larr; Check out his site!</em>
+                </p>
+            </footer>
         </div>
     </div>
 
